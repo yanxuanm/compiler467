@@ -1,6 +1,5 @@
 # compiler467
 
-The starter code tarball is available for download from the course web page. It contains the following source files:
 
 • compiler467.c - The main module for the course project.
 
