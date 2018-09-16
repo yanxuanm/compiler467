@@ -60,6 +60,23 @@ extern int yyline;        /* variable holding current line number   */
 // TODO:Replace myToken with your tokens, you can use these tokens in flex
 %token           myToken1 myToken2  
 
+//PREDEFINED FUNCTIONS
+GL_FRAGCOLOR
+GL_FRAGDEPTH
+GL_FRAGCOORD
+GI_TEXCOORD
+GL_COLOR
+GL_SECONDARY
+GL_FOGFRAGCOORD
+GL_LIGHT_HALF
+GL_LIGHT_AMBIENT
+GL_MATERIAL_SHININESS
+ENV1
+ENV2
+ENV3
+
+
+
 
 %start    program
 
