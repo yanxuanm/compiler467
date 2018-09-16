@@ -1,7 +1,5 @@
 %{
 /***********************************************************************
- * --YOUR GROUP INFO SHOULD GO HERE--
- * 
  *   Interface to the parser module for CSC467 course project.
  * 
  *   Phase 2: Implement context free grammar for source language, and
@@ -55,10 +53,63 @@ extern int yyline;        /* variable holding current line number   */
 // Can access me from flex useing yyval
 
 %union {
-  int num;
+  int as_int;
+  char *as_id;
+  float as_float;
+  bool as_bool;
 }
 // TODO:Replace myToken with your tokens, you can use these tokens in flex
-%token           myToken1 myToken2  
+%token           myToken1 myToken2 
+
+// if/else
+IF
+ELSE
+
+// {}/()/[]
+LEFT_CBRACKET
+RIGHT_CBRACKET
+LEFT_BRACKET
+RIGHT_BRACKET
+LEFT_SBRACKET
+RIGHT_SBRACKET
+
+// ,
+COMMA
+
+// ;
+SEMI_COLUMN
+
+// true/false
+BOOL_TRUE
+BOOL_FALSE
+
+// =
+SINGLE_EQUAL
+
+// bool, bvec2, bvec3, bvec4
+BOOL
+BVEC2
+BVEC3
+BVEC4
+
+// int, ivec2, ivec3, ivec4
+INT
+IVEC2
+IVEC3
+IVEC4
+
+// float, vec2, vec3, vec4
+FLOAT
+VEC2
+VEC3
+VEC4
+
+// qualifier
+CONST
+
+// double/single quote
+DOUBLE_QUOTE
+SINGLE_QUOTE
 
 //PREDEFINED variables
 GL_FRAGCOLOR
@@ -85,12 +136,12 @@ WHILE
 
 //Operators 
 NOT
-POWER
+XOR
 MULTI
 DIVIDE
 PLUS
 MINUS
-EQUAL
+DOUBLE_EQUAL
 NOT_EQUAL
 LESS
 LESS_EQUAL
@@ -98,8 +149,19 @@ GREATER
 GREATER_EQUAL
 LOGICAL_AND
 LOGICAL_OR
-OPEN_COMMENTS
-CLOSE_COMMENTS
+
+// identifiers
+IDENTIFIER
+
+// integer/float literal
+INTEGER_LITERAL
+FLOAT_LITERAL
+
+// comment
+OPEN_COMMENT
+CLOSE_COMMENT
+
+// void
 VOID
 
 %start    program
